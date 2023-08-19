@@ -14,10 +14,16 @@ async function execute(interaction) {
   }
 
   try {
+    await interaction.deferReply({ epemeral: true });
     await command.execute(interaction);
   } catch (error) {
     console.error(`Error executing ${interaction.commandName}`);
     console.error(error);
+    if (interaction.replied || interaction.deferred) {
+      await interaction.editReply({ content: 'There was an error executing this command' });
+    } else {
+      await interaction.reply({ content: 'There was an error executing this command' });
+    }
   }
 }
 
