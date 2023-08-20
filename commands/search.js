@@ -47,9 +47,9 @@ async function execute(interaction) {
             .setColor(0x0099FF)
             .setTitle('Search Character Result')
             .setAuthor({
-              name: 'shawn2013',
+              name: 'DFO Bot By shawn2013',
             })
-            .setDescription(charName)
+            .setDescription(characterName)
             .addFields(
               { name: 'Explorer Club', value: `${exploererClub}` },
               { name: 'Server', value: `${server === 'cain' ? 'Cain' : 'Sirocco'}` },
